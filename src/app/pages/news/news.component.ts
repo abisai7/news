@@ -18,7 +18,7 @@ export class NewsComponent implements OnInit {
   constructor(private readonly newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getNews({ page: 0, size: 5 }).subscribe(
+    this.newsService.getNews({ page: 0, size: 10 }).subscribe(
       (pagedNews) => {
         this.pagedNews = pagedNews;
       }
