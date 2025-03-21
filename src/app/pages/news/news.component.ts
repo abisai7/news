@@ -3,10 +3,11 @@ import { NewsService } from '../../services/news.service';
 import { PageableData } from '../../models/paginated.interface';
 import { News } from '../../models/news.interface';
 import { RouterModule } from '@angular/router';
+import { NewsCardComponent } from '../../components/news-card/news-card.component';
 
 @Component({
   selector: 'app-news',
-  imports: [RouterModule],
+  imports: [RouterModule, NewsCardComponent],
   templateUrl: './news.component.html',
   styleUrl: './news.component.css'
 })
