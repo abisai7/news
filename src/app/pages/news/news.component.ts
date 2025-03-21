@@ -16,7 +16,7 @@ export class NewsComponent implements OnInit {
 
   pagedNews?: PageableData<News>;
   initialPage = 0;
-  defaultPageSize = 5;
+  defaultPageSize = 6;
 
   constructor(private readonly newsService: NewsService) { }
 

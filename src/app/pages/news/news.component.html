@@ -1,7 +1,7 @@
 <section class="w-full max-w p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
   <div class="max-w-screen-xl p-5 mx-auto">
     @if (pagedNews != null) {
-    <div class="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
+    <div class="grid grid-cols-1 gap-5 lg:grid-cols-3 sm:grid-cols-2">
       @for (item of pagedNews.content; track item.id) {
       <app-news-card [item]="item"></app-news-card>
       }
