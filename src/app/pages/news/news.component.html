@@ -1,13 +1,5 @@
-<section
-  class="w-full max-w p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800"
->
-  <h1 class="text-5xl font-bold text-center">
-    Vórtice <span class="text-orange-400">Áureo</span>
-  </h1>
-  <p class="text-sm text-center">
-    El torbellino de ciencia y descubrimiento en perfecta proporción.
-  </p>
-  <div class="max-w-screen-xl p-5 mx-auto dark:bg-gray-100 dark:text-gray-800">
+<section class="w-full max-w p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
+  <div class="max-w-screen-xl p-5 mx-auto">
     @if (pagedNews != null) {
     <div class="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
       @for (item of pagedNews.content; track item.id) {
