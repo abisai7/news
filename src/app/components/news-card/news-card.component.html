@@ -1,36 +1,31 @@
 @if (item != null) {
-<article
-  class="relative flex items-end justify-start w-full text-left dark:bg-gray-500 bg-center bg-cover h-96"
-  style="
+<a [routerLink]="['/news', item.id]">
+  <article
+    class="relative flex items-end justify-start w-full text-left dark:bg-gray-500 bg-center bg-cover h-96"
+    style="
   background-image: url('{{ item.image }}');
 "
->
-  <div class="absolute top-0 bottom-0 left-0 right-0 bg-transparent"></div>
-  <div
-    class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3"
   >
-    <div class="flex justify-start flex-wrap gap-1">
-      @if (item.categories != null) { @for (category of item.categories; track
-      category.id) {
-      <a
-        rel="noopener noreferrer"
-        href="#"
-        class="px-2 py-1 text-xs font-semibold tracking-wider uppercase text-white bg-violet-600"
-        >{{ category.name }}</a
-      >
-      } }
+    <div class="absolute top-0 bottom-0 left-0 right-0 bg-transparent"></div>
+    <div
+      class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3"
+    >
+      <div class="flex justify-start flex-wrap gap-1">
+        @if (item.categories != null) { @for (category of item.categories; track
+        category.id) {
+        <span
+          class="px-2 py-1 text-xs font-semibold tracking-wider uppercase text-white bg-violet-600"
+          >{{ category.name }}</span
+        >
+        } }
+      </div>
     </div>
-  </div>
-  <div class="flex flex-col justify-start bg-white z-10 p-5">
-    <h2 class="text-xl font-bold">
-      <a
-        [routerLink]="['/news', item.id]"
-        class="hover:underline dark:text-gray-800 group-hover:underline group-focus:underline"
-      >
-        {{ item.title }}</a
-      >
-    </h2>
-    <p class="text-sm">{{ item.description }}</p>
-  </div>
-</article>
+    <div class="flex flex-col justify-start w-full min-h-36 bg-white z-10 p-5">
+      <h2 class="text-xl font-bold mb-1">
+        {{ item.title }}
+      </h2>
+      <p class="text-sm">{{ item.description }}</p>
+    </div>
+  </article>
+</a>
 }

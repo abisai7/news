@@ -4,7 +4,8 @@
   class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
 >
   @for (relatedNew of relatedNews; track relatedNew.id) {
-  <a
+  <app-news-card [item]="relatedNew"></app-news-card>
+  <!-- <a
     rel="noopener noreferrer"
     [routerLink]="['/news', relatedNew.id]"
     class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50"
@@ -26,6 +27,7 @@
         {{ relatedNew.description }}
       </p>
     </div> </a
-  >}
+  > -->
+  }
 </div>
 }

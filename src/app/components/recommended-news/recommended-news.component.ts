@@ -2,10 +2,11 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { NewsService } from '../../services/news.service';
 import { RouterModule } from '@angular/router';
 import { News } from '../../models/news.interface';
+import { NewsCardComponent } from '../news-card/news-card.component';
 
 @Component({
   selector: 'app-recommended-news',
-  imports: [RouterModule],
+  imports: [RouterModule, NewsCardComponent],
   templateUrl: './recommended-news.component.html',
   styleUrl: './recommended-news.component.css'
 })
