@@ -6,6 +6,24 @@
       <app-news-card [item]="item"></app-news-card>
       }
     </div>
+    <div class="flex justify-center mt-10">
+      <div class="flex justify-center items-center gap-5">
+        <button
+          class="px-4 py-2 text-sm font-semibold rounded-md text-gray-50 bg-orange-400 hover:bg-orange-500 disabled:bg-gray-300"
+          (click)="goToPage(pagedNews.number - 1)"
+          [disabled]="!hasPreviousPage()"
+        >
+          Anterior
+        </button>
+        <button
+          class="px-4 py-2 text-sm font-semibold rounded-md text-gray-50 bg-orange-400 hover:bg-orange-500 disabled:bg-gray-300"
+          (click)="goToPage(pagedNews.number + 1)"
+          [disabled]="!hasNextPage()"
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
     }
   </div>
 </section>

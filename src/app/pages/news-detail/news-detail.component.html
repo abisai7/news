@@ -1,31 +1,29 @@
-<div
+<section
   class="w-full max-w p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800"
 >
-  <section class="dark:bg-gray-100 dark:text-gray-800">
-    <div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-      @if(newsDetails != null) {
-      <a
-        class="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50"
-      >
-        <img
-          src="{{ newsDetails.image }}"
-          alt=""
-          class="object-cover w-full h-64 rounded sm:h-96 lg:col-span-4 dark:bg-gray-500"
-        />
-        <div class="p-6 space-y-2 lg:col-span-8">
-          <h1 class="text-2xl font-semibold sm:text-4xl text-orange-400">
-            {{ newsDetails.title }}
-          </h1>
-          <span class="text-xs dark:text-gray-600">February 19, 2021</span>
-          <p class="text-sm">
-            {{ newsDetails.description }}
-          </p>
+  <div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+    @if(newsDetails != null) {
+    <a
+      class="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50"
+    >
+      <img
+        src="{{ newsDetails.image }}"
+        alt=""
+        class="object-cover w-full h-64 rounded sm:h-96 lg:col-span-4 dark:bg-gray-500"
+      />
+      <div class="p-6 space-y-2 lg:col-span-8">
+        <h1 class="text-2xl font-semibold sm:text-4xl text-orange-400">
+          {{ newsDetails.title }}
+        </h1>
+        <span class="text-xs dark:text-gray-600">February 19, 2021</span>
+        <p class="text-sm">
+          {{ newsDetails.description }}
+        </p>
 
-          <p class="mt-2">{{ newsDetails.content }}</p>
-        </div>
-      </a>
-      <app-recommended-news [id]="id"></app-recommended-news>
-      }
-    </div>
-  </section>
-</div>
+        <p class="mt-2">{{ newsDetails.content }}</p>
+      </div>
+    </a>
+    <app-recommended-news [id]="id"></app-recommended-news>
+    }
+  </div>
+</section>

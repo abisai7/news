@@ -4,25 +4,44 @@ import { PageableData } from '../../models/paginated.interface';
 import { News } from '../../models/news.interface';
 import { RouterModule } from '@angular/router';
 import { NewsCardComponent } from '../../components/news-card/news-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-news',
-  imports: [RouterModule, NewsCardComponent],
+  imports: [CommonModule, RouterModule, NewsCardComponent],
   templateUrl: './news.component.html',
   styleUrl: './news.component.css'
 })
 export class NewsComponent implements OnInit {
 
   pagedNews?: PageableData<News>;
+  initialPage = 0;
+  defaultPageSize = 5;
 
   constructor(private readonly newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getNews({ page: 0, size: 10 }).subscribe(
+    this.getNews(this.initialPage);
+  }
+
+  getNews(page: number): void {
+    this.newsService.getNews({ page: page ?? this.initialPage, size: this.defaultPageSize }).subscribe(
       (pagedNews) => {
         this.pagedNews = pagedNews;
       }
     );
+  }
+
+  hasPreviousPage(): boolean {
+    return this.pagedNews?.first === false;
+  }
+
+  hasNextPage(): boolean {
+    return this.pagedNews?.last === false;
+  }
+
+  goToPage(page: number): void {
+    this.getNews(page);
   }
 
 }
